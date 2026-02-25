@@ -6866,7 +6866,7 @@ bool FurnaceGUI::loop() {
             if (wc.destructive) pushDestColor();
             bool passthroughKey=!settings.warnNotePassthrough || wc.key==ImGuiKey_Escape;
             bool keyAccepted=(wc.key != -1) && ImGui::IsKeyPressed((ImGuiKey)wc.key) && passthroughKey;
-            String name=passthroughKey?(fmt::sprintf("%s%s",_(wc.name),wc.nameHint)):(_(wc.name));
+            String name=passthroughKey?(fmt::sprintf("%s",_(wc.name),wc.nameHint)):(_(wc.name));
             if (ImGui::Button(_(name.c_str())) || keyAccepted) {
               warnIsOpen=false;
               ImGui::CloseCurrentPopup();
